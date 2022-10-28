@@ -6,33 +6,29 @@ namespace _04._Pizza_Calories
     {
         static void Main(string[] args)
         {
-            string[] pizza = Console.ReadLine().Split(" ");
-            string name = pizza[1];
-            string[] dough = Console.ReadLine().Split(" ");
-            string flour = dough[1];
-            string baking = dough[2];
-            double doughWeight = double.Parse(dough[3]);
-            try
+             try
             {
-                Dough Dough = new Dough(flour, baking, doughWeight);
-                Pizza Pizza = new Pizza(name, Dough);
-                string command = Console.ReadLine();
-                while (command != "END")
+                string pizzaName = Console.ReadLine().Split()[1];
+
+                string[] doughInput = Console.ReadLine().Split();
+                string flour = doughInput[1];
+                string baking = doughInput[2];
+                double grams = double.Parse(doughInput[3]);
+                Dough dough = new Dough(flour, baking, grams);
+                Pizza pizza = new Pizza(pizzaName, dough);
+
+                string input;
+                while ((input = Console.ReadLine()) != "END")
                 {
-                    string[] toppingcdr = command.Split(" ");
-                    string type = toppingcdr[1];
-                    double weight = double.Parse(toppingcdr[2]);
-                    Topping topping = new Topping(type, weight);
-                    Pizza.AddTopping(topping);
-                    
+                    string topType = input.Split()[1];
+                    double topGrams = double.Parse(input.Split()[2]);
+                    Topping topping = new Topping(topType, topGrams);
+                    pizza.AddTopping(topping);
                 }
-                Console.WriteLine(Pizza);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                
-            }
+                Console.WriteLine(pizza);
+        }
+            catch (Exception ex)
+            { Console.WriteLine(ex.Message); }
         }
     }
 }

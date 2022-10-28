@@ -6,61 +6,75 @@ namespace _04._Pizza_Calories
 {
     public class Dough
     {
-        private const double StartCalories = 2;
+        // Fields - constants
+        private const double MOD_FLOUR_WHITE = 1.5;
+        private const double MOD_FLOUR_WHOLEGRAIN = 1.0;
+        private const double MOD_BAKE_CRISPY = 0.9;
+        private const double MOD_BAKE_CHEWY = 1.1;
+        private const double MOD_BAKE_HOMEMADE = 1.0;
+
+        // Fields - variables
         private string flourType;
         private string bakingTechnique;
-        private double weight;
-        public Dough(string flourType, string bakingTechnique, double weight)
-        {
-            this.flourType = flourType;
-            this.bakingTechnique = bakingTechnique;
-            this.weight = weight;
-        }
-        public string FlourType
-        {
-            get { return this.flourType; }
-            private set
-            {
-                if (value.ToLower() == "white" || value.ToLower() == "wholegrain")
-                {
-                    this.flourType = value;
-                }
-                else
-                {
+        private double grams;        
+
+        // Properties
+        private string FlourType 
+        {             
+            set 
+            {                
+                if (value.ToLower() != "white" && value.ToLower() != "wholegrain")
                     throw new ArgumentException("Invalid type of dough.");
-                }
+                flourType = value;
             }
         }
-        public string BakingTechnique
-        {
-            get { return this.bakingTechnique; }
-            private set
-            {
-                if (value.ToLower() == "crispy" || value.ToLower() == "chewy" || value.ToLower() == "homemade")
-                {
-                    this.bakingTechnique = value;
-                }
-                else
-                {
+
+        private string BakingTechnique
+        { 
+            set
+            {                
+                if (value.ToLower() != "crispy" && value.ToLower() != "chewy" && value.ToLower() != "homemade")
                     throw new ArgumentException("Invalid type of dough.");
-                }
+                bakingTechnique = value;
             }
         }
-        public double Weight
+
+        private double Grams 
         {
-            get { return this.weight; }
-            private set
+            set
             {
                 if (value < 1 || value > 200)
-                {
-                    throw new ArgumentException("Dough weight should be in the range [1..200].");
-                }
-                this.weight = value;
-            }
+                    throw new ArgumentException("Dough weight should be in the range[1..200].");
+                grams = value;
+            } 
         }
-        public double GetTotalCalories()
+
+        public double CaloriesPerGram 
+        { 
+            get 
+            { 
+                double caloriesPerGram = 2; 
+                
+                if (this.flourType.ToLower() == "white") caloriesPerGram *= MOD_FLOUR_WHITE;
+                else if (this.flourType.ToLower() == "wholegrain") caloriesPerGram *= MOD_FLOUR_WHOLEGRAIN;
+                if (this.bakingTechnique.ToLower() == "crispy") caloriesPerGram *= MOD_BAKE_CRISPY;
+                else if (this.bakingTechnique.ToLower() == "chewy") caloriesPerGram *= MOD_BAKE_CHEWY;
+                else if (this.bakingTechnique.ToLower() == "homemade") caloriesPerGram *= MOD_BAKE_HOMEMADE;
+
+                return caloriesPerGram;
+            } 
+        }
+
+        // Constructors
+        public Dough(string flourType, string bakingTechnique, double grams)
         {
-            return StartCalories * Weight * Modifiers.GetCalsByFlourType(FlourType) * Modifiers.GetCalsByBakingTechnique(BakingTechnique);
+            this.FlourType = flourType;
+            this.BakingTechnique = bakingTechnique;
+            this.Grams = grams;
         }
+
+        // Methods
+        public double GetCalories()
+        => grams * this.CaloriesPerGram;
     }
 }
