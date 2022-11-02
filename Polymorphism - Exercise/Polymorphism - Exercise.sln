@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism - Exercise", "Polymorphism - Exercise\Polymorphism - Exercise.csproj", "{75C631BE-40FA-4575-9C60-48B40524E84E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Polymorphism - Exercise", "Polymorphism - Exercise\Polymorphism - Exercise.csproj", "{75C631BE-40FA-4575-9C60-48B40524E84E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Vehicles", "01. Vehicles\01. Vehicles.csproj", "{2F25170B-E8A0-43C5-ABD3-56078053A284}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Vehicles Extension", "02. Vehicles Extension\02. Vehicles Extension.csproj", "{A9F80B4D-EDC6-468C-A55D-DEE8C5843677}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Raiding", "03. Raiding\03. Raiding.csproj", "{3EBDFBEB-0C7A-469C-8AB4-3EF135DB1811}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03. Raiding", "03. Raiding\03. Raiding.csproj", "{3EBDFBEB-0C7A-469C-8AB4-3EF135DB1811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. Wild Farm", "04. Wild Farm\04. Wild Farm.csproj", "{F70361AE-D600-4A08-A164-198801B36525}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3EBDFBEB-0C7A-469C-8AB4-3EF135DB1811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EBDFBEB-0C7A-469C-8AB4-3EF135DB1811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EBDFBEB-0C7A-469C-8AB4-3EF135DB1811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70361AE-D600-4A08-A164-198801B36525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70361AE-D600-4A08-A164-198801B36525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70361AE-D600-4A08-A164-198801B36525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70361AE-D600-4A08-A164-198801B36525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
