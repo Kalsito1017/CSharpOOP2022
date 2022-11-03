@@ -7,5 +7,6 @@ namespace _04._Wild_Farm.Entities.Food
     public interface IFood
     {
         public int Quantity { get;}
+
     }
 }
