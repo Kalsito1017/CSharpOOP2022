@@ -1,0 +1,3 @@
+09-Nov-22 20:27:20 - Error - Error parsing JSON.
+09-Nov-22 20:27:20 - Info - User Pesho successfully registered.
+
