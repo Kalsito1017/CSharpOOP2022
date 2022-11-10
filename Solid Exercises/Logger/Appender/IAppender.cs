@@ -1,14 +1,17 @@
-﻿using Logger.ILogger;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
+
 
 namespace Logger.Appender
 {
+    using System;
+    using Logger.ILogger;
+    using Logger.ReportLevels;
     public interface IAppender
     {
        ILayout Layouts { get; }
-        void Append(DateTime dateTime, string errorLevel, string message);
+        ReportLevel ReportLevel { get; set; }
+        int AppendedMessages { get; }
+        void Append(DateTime dateTime, ReportLevel reportLevel, string message);
         
     }
 }

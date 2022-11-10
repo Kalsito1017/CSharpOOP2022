@@ -1,7 +1,4 @@
 ﻿using Logger.Appender;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Logger.Loggers
 {
@@ -11,5 +8,7 @@ namespace Logger.Loggers
         void Info(string message);
         void Warning(string message);
         void Error(string message);
+        void Fatal(string message);
+        void Critical (string message);
     }
 }

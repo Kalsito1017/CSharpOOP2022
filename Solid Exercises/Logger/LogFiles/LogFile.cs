@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace Logger.LogFiles
 {
+    using System.Linq;
+    using System.Text;
     public class LogFile : ILogFile
     {
         private readonly StringBuilder stringBuilder;

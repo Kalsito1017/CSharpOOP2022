@@ -1,3 +1,17 @@
 09-Nov-22 20:27:20 - Error - Error parsing JSON.
 09-Nov-22 20:27:20 - Info - User Pesho successfully registered.
 
+10-Nov-22 17:52:36 - Error - Error parsing JSON.
+10-Nov-22 17:52:36 - Info - User Pesho successfully registered.
+10-Nov-22 17:53:25 - Error - Error parsing JSON.
+10-Nov-22 17:53:25 - Info - User Pesho successfully registered.
+10-Nov-22 17:53:29 - Error - Error parsing JSON.
+10-Nov-22 17:53:29 - Info - User Pesho successfully registered.
+10-Nov-22 17:53:37 - Error - Error parsing JSON.
+10-Nov-22 17:53:37 - Info - User Pesho successfully registered.
+10-Nov-22 17:55:40 - Error - Error parsing JSON.
+10-Nov-22 17:55:40 - Info - User Pesho successfully registered.
+10-Nov-22 17:55:40 - Warning - WARNING WARNING 
+10-Nov-22 17:59:19 - Error - Error parsing JSON.
+10-Nov-22 17:59:19 - Info - User Pesho successfully registered.
+10-Nov-22 17:59:19 - Warning - WARNING WARNING 

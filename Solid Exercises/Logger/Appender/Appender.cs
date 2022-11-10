@@ -1,11 +1,10 @@
-﻿using Logger.ILogger;
-using System;
-
-
+﻿
 namespace Logger.Appender
 {
-    using Logger.ILogger;
+
     using System;
+    using ILogger;
+    using ReportLevels;
     public abstract class Appender : IAppender
     {
         public Appender(ILayout layout)
@@ -13,9 +12,13 @@ namespace Logger.Appender
         {
             this.Layouts = layout;
         }
-        
+        public ReportLevel ReportLevel { get; set; }
+        public int AppendedMessages { get; protected set; }
+
         public ILayout Layouts { get; }
-        public abstract void Append(DateTime dateTime, string errorLevel, string message);
-        
+        public abstract void Append(DateTime dateTime, ReportLevel reportLevel, string message);
+        public override string ToString()
+        => $@"Appender type: {this.GetType().Name}, Layout type: {this.GetType().Name}, Report level: {this.ReportLevel}, Messages
+                   appended: {this.AppendedMessages}";
     }
 }

@@ -1,13 +1,9 @@
-﻿using Logger.Appender;
-using System;
-
-
+﻿
 namespace Logger.Loggers
 {
     using System;
-    using System.Linq;
-    
-   
+    using ReportLevels;
+    using Appender;
     public class Logger : ILoggers
     {
         public Logger(params IAppender []appenders)
@@ -15,19 +11,27 @@ namespace Logger.Loggers
             this.Appenders = appenders;
         }
         public IAppender[] Appenders { get; }
+        // Info > Warning > Error > Critical > Fatal.
         public void Error(string message)
-         => Log("Error", message);
-
+         => Log(ReportLevel.Error, message);
         public void Info(string message)
-       => Log("Info", message);
-
+       => Log(ReportLevel.Info, message);
         public void Warning(string message)
-        => Log("Warning", message);
-        private void Log(string level, string message)
+        => Log(ReportLevel.Warning, message);
+        public void Critical(string message)
+       => Log(ReportLevel.Critical, message);
+        public void Fatal(string message)
+       => Log(ReportLevel.Fatal, message);
+
+        private void Log(ReportLevel level, string message)
         {
             foreach (var appender in this.Appenders)
             {
-                appender.Append(DateTime.Now, level, message);
+                if (level >= appender.ReportLevel)
+                {
+                    appender.Append(DateTime.Now, level, message);
+                }
+                
             }
             
         }
