@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mocking and Test Driven Development - Lab", "Mocking and Test Driven Development - Lab\Mocking and Test Driven Development - Lab.csproj", "{ED8B7F28-81AC-4301-AA48-965466B299E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankSoftware.Tests", "BankSoftware.Tests\BankSoftware.Tests.csproj", "{9B084D66-F713-4CF3-B011-C36EC93B1803}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED8B7F28-81AC-4301-AA48-965466B299E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8B7F28-81AC-4301-AA48-965466B299E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8B7F28-81AC-4301-AA48-965466B299E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8B7F28-81AC-4301-AA48-965466B299E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B084D66-F713-4CF3-B011-C36EC93B1803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B084D66-F713-4CF3-B011-C36EC93B1803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B084D66-F713-4CF3-B011-C36EC93B1803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B084D66-F713-4CF3-B011-C36EC93B1803}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C263C988-CD1D-48B0-8111-8F8D70C10B10}
+	EndGlobalSection
+EndGlobal
