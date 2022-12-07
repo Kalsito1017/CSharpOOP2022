@@ -36,6 +36,6 @@ namespace NavalVessels.Models
         public override void RepairVessel()
             => ArmorThickness = InitialArmorThickness;
         public override string ToString()
-            => base.ToString() + $" *Submerge mode: {(SubmergeMode ? "ON" : "OFF")}";
+            => base.ToString().TrimEnd() + $" *Submerge mode: {(SubmergeMode ? "ON" : "OFF")}";
     }
 }

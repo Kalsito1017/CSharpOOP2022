@@ -13,22 +13,23 @@ namespace NavalVessels.Models
         private readonly List<string> targets;
         protected Vessel(string name, double mainWeaponCaliber, double speed, double armorThickness)
         {
-            Name = name;
-            ArmorThickness = armorThickness;
-            MainWeaponCaliber = mainWeaponCaliber;
-            Speed = speed;
+            this.Name = name;
+            this.ArmorThickness = armorThickness;
+            this.MainWeaponCaliber = mainWeaponCaliber;
+            this.Speed = speed;
             this.targets = new List<string>();
         }
 
         public string Name
         {
-            get { return name; }
+            get { return this.name; }
             private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException("Vessel name cannot be null or empty.");
                 }
+                this.name = value;
             }
         }
 
@@ -64,6 +65,8 @@ namespace NavalVessels.Models
                 ArmorThickness = 0;
             }
             this.targets.Add(target.Name);
+            this.Captain.IncreaseCombatExperience();
+            target.Captain.IncreaseCombatExperience();
         }
 
         public abstract void RepairVessel();
@@ -71,14 +74,14 @@ namespace NavalVessels.Models
         {
             StringBuilder sb = new StringBuilder();
             sb
-               .AppendLine($"- {Name}")
+               .AppendLine($"- {this.Name}")
                .AppendLine($" *Type: {this.GetType().Name}")
                .AppendLine($" *Armor thickness: {ArmorThickness}")
                .AppendLine($" *Main weapon caliber: {MainWeaponCaliber}")
                .AppendLine($" *Speed: {Speed} knots")
                .AppendLine($" *Targets: {(Targets.Count == 0 ? "None" : string.Join(", ", Targets))}");
 
-            return sb.ToString();
+            return sb.ToString().TrimEnd();
         }
     }
 }

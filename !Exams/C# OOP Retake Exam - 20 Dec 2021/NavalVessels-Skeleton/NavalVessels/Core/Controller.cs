@@ -1,15 +1,12 @@
-﻿using NavalVessels.Core.Contracts;
-using NavalVessels.Models;
-using NavalVessels.Models.Contracts;
-using NavalVessels.Repositories;
-using NavalVessels.Utilities.Messages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace NavalVessels.Core
+﻿namespace NavalVessels.Core
 {
+      using NavalVessels.Core.Contracts;
+       using NavalVessels.Models;
+      using NavalVessels.Models.Contracts;
+       using NavalVessels.Repositories;
+       using NavalVessels.Utilities.Messages;
+        using System.Collections.Generic;
+        using System.Linq;
     public class Controller : IController
     {
         private VesselRepository vessels;
@@ -21,15 +18,13 @@ namespace NavalVessels.Core
         }
         public string HireCaptain(string fullName)
         {
-            
+            ICaptain captain = new Captain(fullName);
             if (captains.Any(c => c.FullName == fullName))
             {
                 return string.Format(OutputMessages.CaptainIsAlreadyHired, fullName);
             }
-            ICaptain captain = new Captain(fullName);
-            captains.Add(captain);
+            this.captains.Add(captain);
             return string.Format(OutputMessages.SuccessfullyAddedCaptain, fullName);
-
         }
         public string ProduceVessel(string name, string vesselType, double mainWeaponCaliber, double speed)
         {
@@ -74,6 +69,7 @@ namespace NavalVessels.Core
                 return string.Format(OutputMessages.VesselOccupied, selectedVesselName);
             }
             vessel.Captain = captain;
+            captain.AddVessel(vessel);
             return string.Format(OutputMessages.SuccessfullyAssignCaptain, selectedCaptainName, selectedVesselName);
 
         }
